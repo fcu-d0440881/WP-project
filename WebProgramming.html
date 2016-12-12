@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>人生何其痛苦，所以至少咖啡要甜一點</title> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.cookie.js"></script>
+    <script>
+    $(function(){
+	var _menu_id = $.cookie('menu_id');	
+	$("#menu dt").click(function(){		
+		//將選單索引值寫入cookie
+		var _index = $("#menu dt").index(this);		
+		$.cookie("menu_id", _index);		
+		
+		var _this = $(this);
+		var _ans = $(this).next();
+		
+		if(_ans.is(":visible")){
+			_ans.slideUp();
+		}else{
+			$("#menu dd").slideUp();
+			_ans.slideDown();
+		}
+	}).next().slideUp();
+	
+	//當cookie值不等於空時，就展開選單
+	if($.cookie("menu_id")!=null){
+		$("#menu dd").eq(_menu_id).slideDown();	
+	}
+	
+	//清除cookie
+	$("#c-cookie").click(function(){	
+		$.cookie("menu_id", null);
+	});
+		
+	});
+	</script>
+    <style>
+    upmenu {
+		width: 155px;
+		background-color: #bce0de;
+	}
+	#upmenu dt {
+		cursor: pointer;
+	}
+	#upmenu dd, #upmenu  ul {
+		margin: 0;
+		padding: 0;
+	}
+	#upmenu ul li {
+		list-style: none;
+	}
+	#upmenu ul li a {
+		text-decoration: none;
+		color: #660;
+	}
+	#upmenu ul li a:hover {
+		text-decoration: underline;
+	}
+    </style>
+</head>
+
+<style type="text/css">
+	.menu * {margin:0; padding;0}
+	.menu {position:relative;
+		   z-index:10;
+		   font-size:16px;
+		  }
+	.menu ul {list-style:none;}
+	.menu li {float:left;
+			  position:relative;
+			 }
+	.menu ul ul
+		 {visibility:hidden;
+		  position:absolute;
+		  top:24px;
+		 }
+	.menu table {position:absolute; top:0; left:0;}
+	.menu ul li:hover ul, .menu ul a:hover ul
+		  {visibility:visible;}
+	.menu a {display:block;
+			 margin:4px;
+			}
+	.menu a:hover {border:1px solid white;}
+	.menu ul ul li {clear:both;}
+	.menu ul ul li a
+		  {display:block;
+		   width:120px;
+		   margin:0;
+		  }
+</style>
+
+<body>
+<div id="WebPerforming">
+<ul>
+    <div id="leftMenu"><table width="400" border="0">
+    <td width="307"128 valign="top"><table width="303" border="0">
+    <td width="297" height="303"><img src="images/Wed-FCU.jpg" width="303" height="301" /></td>
+    <dl id="upmenu">
+	<dt><td height="50" align="center"><div align="center"><a href="#NO01">商學院</a>&nbsp;</div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">會計學系</a></li><br/>
+            <li><a href="#">國際貿易學系</a></li><br/>
+            <li><a href="#">財稅學系</a></li><br/>
+            <li><a href="#">合作經濟學系</a></li><br/>
+            <li><a href="#">統計學系</a></li><br/>
+            <li><a href="#">經濟學系</a></li><br/>
+            <li><a href="#">企業管理學系</a></li>
+        </ul>
+        </dd>
+    </dt>      
+	<dt><td height="50"><div align="center"><a href="#NO02">工學院</a></div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">機械與電腦輔助工程學系</a></li><br/>
+            <li><a href="#">纖維與複合材料學系</a></li><br/>
+            <li><a href="#">工業工程與系統管理學系</a></li><br/>
+            <li><a href="#">化學工程學系</a></li><br/>
+            <li><a href="#">航太與系統工程學系</a></li>
+        </ul>
+        </dd>
+    </dt>
+	<dt><td height="50"><div align="center"><a href="#NO03">資電學院</a>&nbsp;</div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">資訊工程學系</a></li>
+            <li><a href="#">電機工程學系</a></li><br/>
+            <li><a href="#">電子工程學系</a></li><br/>
+            <li><a href="#">自動控制學系</a></li><br/>
+            <li><a href="#">通訊工程學系</a></li><br/>
+            <li><a href="#">資電榮譽班</a></li>
+        </ul>
+        </dd>
+    </dt>
+	<dt><td height="50"><div align="center"><a href="#NO04">建設學院</a>&nbsp;</div></td></dt>
+		<dd>
+        <ul>
+            <li><a href="#">水利學系</a></li><br/>
+            <li><a href="#">都資學系</a></li><br/>
+            <li><a href="#">土木學系</a></li><br/>
+            <li><a href="#">土管學系</a></li><br/>
+            <li><a href="#">運管學系</a></li>
+    	</ul>
+        </dd>
+    </dt>
+	<li><td height="50"><div align="center"><a href="#NO05">人文社會學院</a>&nbsp;</div></td></dt>
+		<dd>
+        <ul>
+            <li><a href="#">中國文學系</a></li><br/>
+            <li><a href="#">外文學系</a></li>
+    	</ul>
+        </dd>
+   	</li>
+	<dt><td height="50"><div align="center"><a href="#NO06">金融學院</a>&nbsp;</div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">風保學系</a></li><br/>
+            <li><a href="#">財經學系</a></li>
+        </ul>
+        </dd>
+    </dt>
+	<dt><td height="50"><div align="center"><a href="#NO07">理學院</a>&nbsp;</div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">應用數學學系</a></li><br/>
+            <li><a href="#">環科學系</a></li><br/>
+            <li><a href="#">材料學系</a></li><br/>
+            <li><a href="#">光電學系</a></li>
+        </ul>
+        </dd>
+    </dt>
+	<dt><td height="50"><div align="center"><a href="#NO9">建築專業學院</a></div></td></dt>
+        <dd>
+        <ul>
+            <li><a href="#">建築學系</a></li>
+        </ul>
+        </dd>
+    </dt>
+    </dl>
+    </table></td>
+    <td width="400">
+    </div>
+</ul>
+
+      <div id="upBackgrund"> <img src="images/WebUp.jpg" width="1000" height="250" /></div>
+      <div id="upMenu">
+      <table width="960" border="0">
+      <tr><fieldset>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO01">新北區</a>
+                <ul>
+                    <li><a href=' '> 國立臺灣大學</a>
+                    <li><a href=' '> 國立臺灣師範大學</a>
+                    <li><a href=' '> 東吳大學</a>
+                    <li><a href=' '> 國立政治大學</a>
+                    <li><a href=' '> 中國文化大學</a>
+                    <li><a href=' '> 大同大學</a>
+                    <li><a href=' '> 國立陽明大學</a>
+                    <li><a href=' '> 國立臺北藝術大學</a>
+                    <li><a href=' '> 實踐大學</a>
+                    <li><a href=' '> 臺北醫學大學</a>
+                    <li><a href=' '> 國立臺灣海洋大學</a>
+                    <li><a href=' '> 國立金門大學</a>
+                    <li><a href=' '> 淡江大學</a>
+                    <li><a href=' '> 輔仁大學</a>
+                    <li><a href=' '> 華梵大學</a>
+                    <li><a href=' '> 國立台灣藝術大學</a>
+                    <li><a href=' '> 真理大學</a>
+                    <li><a href=' '> 國立臺北大學</a>
+                    <li><a href=' '> 馬偕醫學院</a>
+                </ul>
+                </li>
+          </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO02">桃竹苗地區</a>
+                <ul>
+                    <li><a href=' '> 中原大學</a>
+                    <li><a href=' '> 國立中央大學</a>
+                    <li><a href=' '> 長庚大學</a>
+                    <li><a href=' '> 國立體育大學</a>
+                    <li><a href=' '> 元智大學</a>
+                    <li><a href=' '> 開南大學</a>
+                    <li><a href=' '> 國立清華大學</a>
+                    <li><a href=' '> 國立交通大學</a>
+                    <li><a href=' '> 國立新竹教育大學</a>
+                    <li><a href=' '> 中華大學</a>
+                    <li><a href=' '> 玄奘大學</a>
+                    <li><a href=' '> 國立聯合大學</a>
+                </ul>
+                </li>
+          </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO03">中彰投地區</a>
+                <ul>
+                    <li><a href=' '> 國立彰化師範大學</a>
+                    <li><a href=' '> 大業大學</a>
+                    <li><a href=' '> 明道大學</a>
+                    <li><a href=' '> 國立暨南國際大學</a>
+                    <li><a href=' '> 國立中興大學</a>
+                    <li><a href=' '> 東海大學</a>
+                    <li><a href=' '> 中國醫藥大學</a>
+                    <li><a href=' '> 逢甲大學</a>
+                    <li><a href=' '> 靜宜大學</a>
+                    <li><a href=' '> 中山醫學大學</a>
+                    <li><a href=' '> 國立臺中教育大學</a>
+                    <li><a href=' '> 國立臺灣體育運動大學</a>
+                    <li><a href=' '> 亞洲大學</a>
+                </ul>
+                </li>
+          </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu"><ul>
+                <li><a href="#MO04"> 雲嘉南地區</a>
+                <ul>
+                    <li><a href=' '> 國立中正大學</a>
+                    <li><a href=' '> 南華大學</a>
+                    <li><a href=' '> 稻江科技暨管理學院</a>
+                    <li><a href=' '> 國立成功大學</a>
+                    <li><a href=' '> 國立臺南大學</a>
+                    <li><a href=' '> 長榮大學</a>
+                    <li><a href=' '> 國立臺南藝術藥大學</a>
+                    <li><a href=' '> 臺灣首府大學</a>
+                    <li><a href=' '> 康寧大學</a>
+                    <li><a href=' '> 中信金融管理學院</a>
+                </ul>
+                </li>
+          </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO05"> 高屏地區</a>
+                <ul>
+                    <li><a href=' '> 高雄醫學大學</a>
+                    <li><a href=' '> 國立高雄師範大學</a>
+                    <li><a href=' '> 國立中山大學</a>
+                    <li><a href=' '> 義守大學</a>
+                    <li><a href=' '> 國立高雄大學</a>
+                    <li><a href=' '> 國立屏東大學</a>
+                </ul>
+                </li>
+           </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO06"> 台東地區</a>
+                <ul>
+                    <li><a href=' '> 國立臺東大學</a>
+                </ul>
+                </li>
+          </ul></div>
+          <td width="125" height="60" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO07"> 花蓮地區</a>
+                <ul>
+                    <li><a href=' '> 國立東華大學</a>
+                    <li><a href=' '> 慈濟大學</a>
+                </ul>
+                </li>
+		  </ul></div>
+          <td width="125" height="75" align="center"></td>
+          <div class="menu">
+          <ul>
+                <li><a href="#MO08"> 宜蘭地區</a>
+                <ul>
+                    <li><a href=' '> 佛光大學</a>
+                    <li><a href=' '> 國立宜蘭大學</a>
+                </ul></li>
+		  </ul></div>
+    </tr>
+   	</table>
+	<p><embed src="song\ElRagna.swf" width="368" height="8" hidden="true" autostart="true" loop="1"></embed></p>
+    </div>
+        
+        
+      <div id="content">
+        <p><marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="15"><font size="+5" face="標楷體" color="#FF0000">努力不一定會成功，但放棄一定會很輕鬆。</font></marquee></p>
+        <h1 align="center">理念</h1>
+        <p> <span id="Mutsu">多一分包容 多一分尊重</span></p>
+        <p>少一份謾罵 少一分侮辱</p>
+        <p>有時候不努力一把,還真不知道甚麼叫做絕望呢!</p>
+        <I want to be a nice person.But people are so stupid.</p>
+        <p>逃離大刀 遇見大佛 營養學分 畢業有望</p>
+        <p>選課在人 allpa在天</p>
+        <img src="images/Web-1.jpg" width="1920" height="1080" />
+        <h1 align="center">版規</h1>
+        <p>1.請勿有侮辱性字眼</p>
+        <p>2.請勿有蓄意造謠或欺瞞之行為</p>
+        <p>3.</p>
+        <p>4.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        </div>
+      <div id="Kaga"></div>
+  &nbsp;</td>
+    </tr>
+</table>
+
+</div>
+</body>
+</html>
