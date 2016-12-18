@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>人生何其痛苦，所以至少咖啡要甜一點</title> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+    <script type="text/javascript" language="javascript"></script>
+	<style>
+    #menu {
+        width: 155px;
+        background-color: #bce0de;
+    }
+    #menu dt {
+        cursor: pointer;
+    }
+    #menu dd, #menu  ul {
+        margin: 0;
+        padding: 0;
+    }
+    #menu ul li {
+        list-style: none;
+    }
+    #menu ul li a {
+        text-decoration: none;
+        color: #660;
+    }
+    #menu ul li a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script>
+    $(function(){
+        var _menu_id = $.cookie('menu_id');	
+        $("#menu dt").click(function(){		
+            //將選單索引值寫入cookie
+            var _index = $("#menu dt").index(this);		
+            $.cookie("menu_id", _index);		
+            
+            var _this = $(this);
+            var _ans = $(this).next();
+            
+            if(_ans.is(":visible")){
+                _ans.slideUp();
+            }else{
+                $("#menu dd").slideUp();
+                _ans.slideDown();
+            }
+        }).next().slideUp();
+        
+        //當cookie值不等於空時，就展開選單
+        if($.cookie("menu_id")!=null){
+            $("#menu dd").eq(_menu_id).slideDown();	
+        }
+        
+        //清除cookie
+        $("#c-cookie").click(function(){	
+            $.cookie("menu_id", null);
+        });
+        
+    });
+    </script>
+    <p><marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="15"><font size="+5" face="標楷體" color="#FF0000">努力不一定會成功，但放棄一定會很輕鬆。</font></marquee></p>
+<p><embed src="song\ElRagna.swf" width="368" height="8" hidden="true" autostart="true" loop="1"></embed></p>
+</head>
+
+<body>
+    <img src="images/Wed-FCU.jpg" width="236" height="236">
+    <img src="images/WebUp.jpg" width="782" height="242">
+    </br><font size="5">學院列表</font>
+    <hr>
+	<dl id="menu">
+        <dt><a href="#NO01"><img src="images/商學院.jpg" width="155" height="40" border="0" /></a></dt>
+      		<dd>
+            <ul>
+                <li><a href="#">會計學系</a></li><br/>
+                <li><a href="#">國際貿易學系</a></li><br/>
+                <li><a href="#">財稅學系</a></li><br/>
+                <li><a href="#">合作經濟學系</a></li><br/>
+                <li><a href="#">統計學系</a></li><br/>
+                <li><a href="#">經濟學系</a></li><br/>
+                <li><a href="#">企業管理學系</a></li>
+            </ul>
+            </dd>     
+        <dt><a href="#NO02"><img src="images/工學院.jpg" width="155" height="40" border="0" /></a></dt>
+            <dd>
+            <ul>
+                <li><a href="#">機械與電腦輔助工程學系</a></li><br/>
+                <li><a href="#">纖維與複合材料學系</a></li><br/>
+                <li><a href="#">工業工程與系統管理學系</a></li><br/>
+                <li><a href="#">化學工程學系</a></li><br/>
+                <li><a href="#">航太與系統工程學系</a></li>
+            </ul>
+            </dd>
+        <dt><a href="#NO03"><img src="images/資電學院.jpg" width="155" height="40" border="0" /></a></dt>
+            <dd>
+            <ul>
+                <li><a href="#">資訊工程學系</a></li>
+                <li><a href="#">電機工程學系</a></li><br/>
+                <li><a href="#">電子工程學系</a></li><br/>
+                <li><a href="#">自動控制學系</a></li><br/>
+                <li><a href="#">通訊工程學系</a></li><br/>
+                <li><a href="#">資電榮譽班</a></li>
+            </ul>
+            </dd>
+        <dt><a href="#NO04"><img src="images/建設學院.jpg" width="155" height="40" border="0" /></a></dt>
+            <dd>
+            <ul>
+                <li><a href="#">水利學系</a></li><br/>
+                <li><a href="#">都資學系</a></li><br/>
+                <li><a href="#">土木學系</a></li><br/>
+                <li><a href="#">土管學系</a></li><br/>
+                <li><a href="#">運管學系</a></li>
+            </ul>
+            </dd>
+        <dt><a href="#NO05"><img src="images/人文社會學院.jpg" width="155" height="40" border="0" /></a></dt>
+            <dd>
+            <ul>
+                <li><a href="#">中國文學系</a></li><br/>
+                <li><a href="#">外文學系</a></li>
+            </ul>
+            </dd>
+        <dt><a href="#NO06"><img src="images/金融學院.jpg" width="155" height="40" border="0" /></a></dt>
+            <dd>
+            <ul>
+                <li><a href="#">風保學系</a></li><br/>
+                <li><a href="#">財經學系</a></li>
+            </ul>
+            </dd>
+        <dt>
+      <td height="50"><a href="#NO07"><img src="images/理學院.jpg" width="155" height="40" border="0" /></a></td></dt>
+            <dd>
+            <ul>
+                <li><a href="#">應用數學學系</a></li><br/>
+                <li><a href="#">環科學系</a></li><br/>
+                <li><a href="#">材料學系</a></li><br/>
+                <li><a href="#">光電學系</a></li>
+            </ul>
+            </dd>
+        <dt><td height="50"><a href="#NO9"><img src="images/建築專業學院.jpg" width="155" height="40" border="0" /></a></td></dt>
+            <dd>
+            <ul>
+                <li><a href="#">建築學系</a></li>
+            </ul>
+			</dd>
+	</ul>
+ 	</dd>
+</dl>
+    <hr>
+    <a href="#" id="c-cookie">清除cookie</a>
+	<hr>
+</body>
+</html>
