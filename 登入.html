@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ch10_6_3.html</title>
+<script src="CookieLib.js"></script>
+<script>
+function hitCounter(){
+   var counter;
+   if (checkCookieExist("counter")) {
+      counter = getCookie("counter");
+      counter = parseInt(counter) + 1;  // 增加計數
+   }
+   else{
+      counter = 1; // 第一次
+   }
+    // 重新儲存Cookie
+   saveCookie("counter", counter, 10);
+   return counter; // 傳回Cookie值
+}
+// 更改名稱
+function changeName() {
+    var username;
+    username = prompt("請輸入使用者名稱:", "");
+    saveCookie("username", username, 10);
+    return username;
+}
+</script>
+</head>
+<body>
+<script>
+document.write("使用者共造訪網頁: " + hitCounter() + " 次<br/>");
+var username;
+// 檢查是否有Cookie
+if(!checkCookieExist("username"))
+   username = changeName();
+else
+   username = getCookie("username");
+if(username) {
+   document.write("歡迎使用者: " + username.toString() + "進入網站<br/>");
+   saveCookie("username", username, 10);
+}
+</script>
+<form>
+<input type="button" value="刪除使用者名稱" onclick="deleteCookie('username')">
+<input type="button" value="更改使用者名稱" onclick="changeName()">
+</form>
+</body>
+</html>
