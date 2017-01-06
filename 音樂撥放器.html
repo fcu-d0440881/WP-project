@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script>
+function playAudio() {
+   var myAudio = document.getElementById("myAudio");
+   myAudio.play();
+}
+function pauseAudio() {
+   var myAudio = document.getElementById("myAudio");
+   myAudio.pause();
+}
+function playType() {
+   var myAudio = document.getElementById("myAudio");
+   var str = "";    
+   if (myAudio.canPlayType("audio/mpeg")) {
+      str += "支援MP3\n";      
+   }   
+   if (myAudio.canPlayType('audio/ogg; codecs="vorbis"')) {
+      str+="支援OGG\n";
+   }
+   alert(str);
+}
+</script>
+</head>
+<body>
+<h2>HTML5的音效- 控制音效的播放</h2>
+<hr/>
+<audio id="myAudio">
+   
+  <source src="song/ElRagna.mp3" type="audio/mpeg"/>
+   <p>你的瀏覽器不支援HTML 5的Audio元素</p>.
+</audio>
+<form>
+<input type="button" value="播放" onclick="playAudio()">
+<input type="button" value="暫停" onclick="pauseAudio()">
+<input type="button" value="顯示支援格式" onclick="playType()">
+</form>
+<div>
+音量: <input id="volume" type="range" min="0" max="10" value="5"/>
+</div>
+<span id="duration"></span>
+<script>
+var myAudio = document.getElementById("myAudio");
+// 調整音量
+var volume = document.getElementById("volume");
+volume.addEventListener("change", function() {
+   myAudio.volume = parseFloat(this.value / 10);
+}, false);
+// 顯示播放時間
+myAudio.addEventListener("timeupdate", function() {
+   var duration = document.getElementById("duration");
+   var s1 = parseInt(myAudio.currentTime % 60);
+   var m1 = parseInt((myAudio.currentTime / 60) % 60);
+   var s2 = parseInt(myAudio.duration % 60);
+   var m2 = parseInt((myAudio.duration / 60) % 60);
+   duration.innerHTML = m1 + "分:" + s1 + "秒 / " +
+                        m2 + "分:" + s2 + "秒";
+}, false);
+</script
+
+</body>
+</html>
